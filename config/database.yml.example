@@ -1,0 +1,22 @@
+default: &default
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  encoding: utf-8
+  username: postgres
+  password: j0bb3hplop
+  port: 5432
+  host: localhost
+  reconnect: true
+  adapter: postgresql
+
+production: &test
+  <<: *default
+  database: cris_prod
+
+development:
+  <<: *default
+  database: cris_dev
+  host: <%= ENV.fetch("POSTGRES_HOST") { "localhost" } %>
+
+test: &test
+  <<: *default
+  database: cris_test

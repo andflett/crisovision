@@ -1,0 +1,3 @@
+%h2 Scorecards
+-User.all.each do |user|
+  =link_to user.name, scorecard_user_path(user)

@@ -1,1 +1,15 @@
 @import 'bootstrap/dist/css/bootstrap';
+
+$blue:        #131337;
+$light-blue:  #365cb6;
+$red:         #dc3a32;
+$green:       #4ca767;
+$yellow:      #f4cc55;
+
+.bg-blue {
+  background: $blue;
+  color: white;
+  a {
+    color: white;
+  }
+}

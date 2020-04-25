@@ -10,6 +10,12 @@
   </head>
 
   <body>
-    <%= yield %>
+
+    <%= render "application/header" %>
+
+    <section id="main-content" class="px-5">
+      <%= yield %>
+    </section>
+
   </body>
 </html>

@@ -12,4 +12,8 @@ class User < ApplicationRecord
   has_many :performances
   has_many :scores
 
+  def scores_excluding_me
+    scores.joins(:performance).where('performances.user_id != ?', self.id)
+  end
+
 end

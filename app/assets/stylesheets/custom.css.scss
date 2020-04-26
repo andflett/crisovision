@@ -16,8 +16,12 @@ input[type='number'] {
   font-size: 1.325em;
   padding: 0.5em;
   font-weight: 100;
-  color: $green;
+  color: $blue;
   text-align: center;
+  border-radius: 5px;
+  background-color: white;
+  box-shadow: 0;
+  border: 1px solid $green;
 }
 
 input[type='submit'] {
@@ -27,6 +31,7 @@ input[type='submit'] {
   font-weight: 600;
   padding: 0.5em 1em;
   font-size: 1.3em;
+  border-radius: 5px;
 }
 
 a {
@@ -53,9 +58,19 @@ h1, h2 {
   font-weight: 100;
 }
 
+.notice {
+  text-align: center;
+  padding: 0.625em 0;
+  font-weight: 600;
+  color: white;
+  background: $green;
+  margin-bottom: 2em;
+  border-radius: 10px;
+}
+
 #site-header {
   .row {
-    margin-left: -2em;
+    margin-left: -2.75em;
     a {
       text-decoration: none;
       padding-bottom: 7px;
@@ -77,16 +92,43 @@ h1, h2 {
   border: 0 !important;
   p {
     margin-left: -10%;
-    padding: 0 30% 0;
-    font-weight: 100;
-    font-size: 1.1em;
+    padding: 5% 30% 0;
+    font-weight: 600;
+    font-size: 1.235em;
     a {
       text-decoration: none;
       color: $blue;
       &:hover, &:active, &:focus {
-        color: $light_blue;
+        color: $green;
       }
     }
+  }
+}
+
+.score_badge {
+  border-radius: 100%;
+  font-weight: 600;
+  background: $green;
+  color: white;
+  text-align: center;
+  width: 3em;
+  display: inline-block;
+  line-height: 1;
+  padding: 1em 0 1em;
+  vertical-align: middle;
+  font-size: 1.1em;
+}
+
+.score-block {
+  text-align: left;
+}
+
+.score_list {
+  list-style: none;
+  padding: 0;
+  li {
+    padding: 0;
+    margin: 0 0 0.125em 0;
   }
 }
 

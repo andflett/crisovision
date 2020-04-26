@@ -1,1 +1,63 @@
-%h1 Scoreboard
+.px-5.mb-5.pb-4.pt-4
+  .text-center
+    %h2.mb-4 Overall winner
+    -@winner = Performance.all.joins(:scores).uniq.sort_by{ |p| p.overall_score }.reverse.first
+  .text-center
+    .score_badge.mb-3
+      ="#{@winner.overall_score}"
+    %h4=@winner.title
+    %p=@winner.user.name
+
+.row.text-center.mb-5
+  .col-md-4
+    %h2.mb-4 Performance – Top 3
+    .mt-3
+      -Performance.all.joins(:scores).uniq.sort_by{ |p| p.song_score }.reverse.first(3).each_with_index do |performance, i|
+        .mb-4.pb-1
+          .score_badge.mb-3
+            =i+1
+          %h4=performance.title
+          %p=performance.user.name
+  .col-md-4
+    %h2.mb-4 Outfit – Top 3
+    .mt-3
+      -Performance.all.joins(:scores).uniq.sort_by{ |p| p.outfit_score }.reverse.first(3).each_with_index do |performance, i|
+        .mb-4.pb-1
+          .score_badge.mb-3
+            =i+1
+          %h4=performance.title
+          %p=performance.user.name
+  .col-md-4
+    %h2.mb-4 Stage – Top 3
+    .mt-3
+      -Performance.all.joins(:scores).uniq.sort_by{ |p| p.backdrop_score }.reverse.first(3).each_with_index do |performance, i|
+        .mb-4.pb-1
+          .score_badge.mb-3
+            =i+1
+          %h4=performance.title
+          %p=performance.user.name
+
+.row
+  .col-md-3
+  .col-md-6
+    .pb-3.pt-3.text-center
+      %h1.mb-5 Scoreboard
+      -Performance.all.joins(:scores).uniq.sort_by{ |p| p.overall_score }.reverse.each_with_index do |performance, i|
+        .row.mb-4
+          .col-2
+            .score_badge
+              =i+1
+          .col-10.score-block
+            %h4=performance.title
+            %p=performance.user.name
+            %ul.score_list
+              %li
+                %span Performance
+                =performance.totals[:song]
+              %li
+                %span Outfit
+                =performance.totals[:outfit]
+              %li
+                %span Stage
+                =performance.totals[:backdrop]
+  .col-md-3

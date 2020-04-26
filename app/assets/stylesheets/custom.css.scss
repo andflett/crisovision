@@ -71,7 +71,7 @@ h1, h2 {
 
 .scorecard {
   text-align: center;
-  background: no-repeat top center url('heart.png');
+  background: no-repeat top center asset_url('heart.png');
   padding: 35% 0 35% !important;
   background-size: contain;
   border: 0 !important;
@@ -82,8 +82,9 @@ h1, h2 {
     font-size: 1.1em;
     a {
       text-decoration: none;
+      color: $blue;
       &:hover, &:active, &:focus {
-        color: $blue;
+        color: $light_blue;
       }
     }
   }
@@ -92,5 +93,5 @@ h1, h2 {
 footer {
   text-align: center;
   min-height: 600px;
-  background: no-repeat 100% 100% url('hero.jpg');
+  background: no-repeat 100% 100% asset_url('hero.jpg');
 }

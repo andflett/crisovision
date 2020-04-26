@@ -22,13 +22,14 @@ input[type='number'] {
   background-color: white;
   box-shadow: 0;
   border: 1px solid $green;
+  text-indent: 0.5em;
 }
 
 input[type='submit'] {
   background: $green;
   border: 0;
   color: white;
-  font-weight: 600;
+  font-weight: 400;
   padding: 0.5em 1em;
   font-size: 1.3em;
   border-radius: 5px;
@@ -41,7 +42,7 @@ a {
 h1, h2 {
   font-size: 1.6em;
   border-bottom: 3px solid $green;
-  padding-bottom: 5px !important;
+  padding-bottom: 4px !important;
   display: inline-block;
   font-weight: 100;
 }
@@ -74,6 +75,9 @@ h1, h2 {
     a {
       text-decoration: none;
       padding-bottom: 7px;
+      .fa {
+        color: $green;
+      }
       &:hover, &:active, &:focus {
         border-bottom: 2px solid $green;
         .fa {
@@ -131,6 +135,13 @@ h1, h2 {
     margin: 0 0 0.125em 0;
   }
 }
+
+span.label {
+  font-size: 0.8em;
+  text-align: center;
+  font-weight: 100;
+}
+
 
 footer {
   text-align: center;

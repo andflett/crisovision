@@ -1,0 +1,19 @@
+.px-5.pb-3
+  .text-center
+    %h1.mb-5="#{@user.name}, be nice... or don't"
+  =form_for :scorecard, url: scorecard_user_path(@user) do |f|
+    -@user.scores.all.each do |score|
+      .row.mb-4
+        .col-6
+          %h3.pt-4.mb-0=score.performance.title
+        .col-2
+          %span.label Performance
+          =f.number_field "#{score.id}[song]", value: (score.song || 0)
+        .col-2
+          %span Outfit
+          =f.number_field "#{score.id}][outfit]", value: (score.outfit || 0)
+        .col-2
+          %span Stage
+          =f.number_field "#{score.id}[backdrop]", value: (score.backdrop || 0)
+    .text-center.pt-3
+      =f.submit

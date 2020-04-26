@@ -5,6 +5,8 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <link href="https://fonts.googleapis.com/css2?family=Questrial&display=swap" rel="stylesheet">
+
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
@@ -13,9 +15,18 @@
 
     <%= render "application/header" %>
 
-    <section id="main-content" class="px-5">
+    <section id="main-content" class="px-5 mb-4 pb-4 pt-4">
+      <%- if @notice.present? %>
+        <div class="notice">
+          <%= @notice %>
+        </div>
+      <% end %>
       <%= yield %>
     </section>
+
+    <footer>
+      <!--<p class="small"><%= link_to "Scoreboard", scores_path %>-->
+    </footer>
 
   </body>
 </html>

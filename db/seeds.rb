@@ -69,5 +69,44 @@ User.create!([
     email: 'andrflett+9@gmail.com',
     name: 'Gary',
     admin: false
-  },
+  }
 ])
+
+Performance.create!([
+  {
+    user: User.find_by_name('Cristina'),
+    link: 'https://www.youtube.com/watch?v=c5LCYSR_YEA',
+    title: 'Sissy That Walk'
+  },
+  {
+    user: User.find_by_name('Sana'),
+    link: 'https://www.youtube.com/watch?v=YJzT1KMjQ0k',
+    title: 'Nimbooda Nimbooda'
+  },
+  {
+    user: User.find_by_name('Rafa & Gordon'),
+    link: 'https://www.youtube.com/watch?v=BQn1gJdVKi4&feature=youtu.be',
+    title: 'Waterloo'
+  },
+  {
+    user: User.find_by_name('James & Mike'),
+    link: 'https://www.youtube.com/watch?v=62SrA5hCmkE&feature=youtu.be',
+    title: 'Making your mind up'
+  },
+  {
+    user: User.find_by_name('Ale & Mario'),
+    link: 'https://www.youtube.com/watch?v=SaolVEJEjV4&feature=youtu.be',
+    title: 'Rise Like a Phoenix'
+  },
+  {
+    user: User.find_by_name('Suzan'),
+    link: 'https://www.youtube.com/watch?v=Pfo-8z86x80&feature=youtu.be',
+    title: 'Euphoria'
+  }
+])
+
+Performance.all.each do |performance|
+  User.all.each do |user|
+    performance.scores.create!({user: user})
+  end
+end

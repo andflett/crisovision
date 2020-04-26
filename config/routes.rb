@@ -8,6 +8,8 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :scores
+
   root to: "users#index"
 
 end

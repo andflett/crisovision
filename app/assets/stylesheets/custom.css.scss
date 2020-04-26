@@ -6,10 +6,91 @@ $red:         #dc3a32;
 $green:       #4ca767;
 $yellow:      #f4cc55;
 
+body {
+  font-family: 'Questrial', sans-serif;
+  color: #333;
+}
+
+input[type='number'] {
+  width: 5em;
+  font-size: 1.325em;
+  padding: 0.5em;
+  font-weight: 100;
+  color: $green;
+  text-align: center;
+}
+
+input[type='submit'] {
+  background: $green;
+  border: 0;
+  color: white;
+  font-weight: 600;
+  padding: 0.5em 1em;
+  font-size: 1.3em;
+}
+
+a {
+  color: $green;
+}
+
+h1, h2 {
+  font-size: 1.6em;
+  border-bottom: 3px solid $green;
+  padding-bottom: 5px !important;
+  display: inline-block;
+  font-weight: 100;
+}
+
 .bg-blue {
   background: $blue;
   color: white;
   a {
     color: white;
   }
+}
+
+.text-weight-light {
+  font-weight: 100;
+}
+
+#site-header {
+  .row {
+    margin-left: -2em;
+    a {
+      text-decoration: none;
+      padding-bottom: 7px;
+      &:hover, &:active, &:focus {
+        border-bottom: 2px solid $green;
+        .fa {
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+.scorecard {
+  text-align: center;
+  background: no-repeat top center url('heart.png');
+  padding: 35% 0 35% !important;
+  background-size: contain;
+  border: 0 !important;
+  p {
+    margin-left: -10%;
+    padding: 0 30% 0;
+    font-weight: 100;
+    font-size: 1.1em;
+    a {
+      text-decoration: none;
+      &:hover, &:active, &:focus {
+        color: $blue;
+      }
+    }
+  }
+}
+
+footer {
+  text-align: center;
+  min-height: 600px;
+  background: no-repeat 100% 100% url('hero.jpg');
 }

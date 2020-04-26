@@ -102,6 +102,11 @@ Performance.create!([
     user: User.find_by_name('Suzan'),
     link: 'https://www.youtube.com/watch?v=Pfo-8z86x80&feature=youtu.be',
     title: 'Euphoria'
+  },
+  {
+    user: User.find_by_name('Fede & Vale'),
+    link: 'https://www.youtube.com/watch?v=9DPAb9-Stmo',
+    title: 'Nel Blu Dipinto Di Blu'
   }
 ])
 

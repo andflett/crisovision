@@ -4,8 +4,7 @@
   =form_for :scorecard, url: scorecard_user_path(@user) do |f|
     -@user.scores_excluding_me.all.each do |score|
       .row.mb-4.pt-2
-        .col-1
-        .col-5
+        .col-6
           %h3.mb-0=score.performance.title
           %p=score.performance.user.name
         .col-2.text-center.pt-1

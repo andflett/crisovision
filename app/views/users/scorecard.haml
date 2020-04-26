@@ -5,7 +5,8 @@
     -@user.scores_excluding_me.all.each do |score|
       .row.mb-4.pt-2
         .col-6
-          %h3.mb-0=score.performance.title
+          %h3.mb-0
+            =link_to score.performance.title, score.performance.link, target: "_blank"
           %p=score.performance.user.name
         .col-2.text-center.pt-1
           =f.number_field "#{score.id}[song]", value: (score.song || 0), max: 10, min: 0

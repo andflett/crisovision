@@ -35,7 +35,7 @@ gem 'devise', ">= 4.7.1"
 gem 'devise_invitable', ">= 2.0.1"
 
 gem "aws-sdk-s3", require: false
-gem 'image_processing', '~> 1.2'
+gem 'image_processing', '~> 1.12'
 
 gem 'pg'
 
